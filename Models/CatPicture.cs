@@ -2,7 +2,6 @@
 {
     public class CatPicture
     {
-        public string id { get; set; }
         public string[] tags { get; set; }
         public string url { get; set; }
     }

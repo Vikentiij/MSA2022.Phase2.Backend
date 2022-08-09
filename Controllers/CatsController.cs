@@ -71,7 +71,7 @@ namespace MSA2022.Phase2.Backend.Controllers
             var cataasApiResponse = await response.Content.ReadFromJsonAsync<CataasApiResponse>();
             if (cataasApiResponse == null) return NotFound("API didn't return any results");
 
-            return Ok(new CatPicture() { id = cataasApiResponse.id, url = $"https://cataas.com{cataasApiResponse.url}", tags = cataasApiResponse.tags });
+            return Ok(new CatPicture() { url = $"https://cataas.com{cataasApiResponse.url}", tags = cataasApiResponse.tags });
         }
 
         /// <summary>

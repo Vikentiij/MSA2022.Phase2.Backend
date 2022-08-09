@@ -2,11 +2,11 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using MSA2022.Phase2.Backend.Models;
 
-IConfiguration configuration = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json")
-                            .Build();
 
 var builder = WebApplication.CreateBuilder(args);
+
+ConfigurationManager configuration = builder.Configuration;
+IWebHostEnvironment environment = builder.Environment;
 
 // Add services to the container.
 

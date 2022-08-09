@@ -1,4 +1,6 @@
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using MSA2022.Phase2.Backend.Models;
 
 IConfiguration configuration = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json")
@@ -13,6 +15,8 @@ builder.Services.AddHttpClient("cataas", configureClient: client =>
 {
     client.BaseAddress = new Uri(configuration["CataasAddress"]);
 });
+
+builder.Services.AddSqlite<CatTagDb>(configuration.GetConnectionString("DefaultConnection"));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

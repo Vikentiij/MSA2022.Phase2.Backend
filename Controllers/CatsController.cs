@@ -15,11 +15,11 @@ namespace MSA2022.Phase2.Backend.Controllers
 
         CatTagDb _context;
 
-        private readonly ILogger<CatsController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public CatsController(ILogger<CatsController> logger, IHttpClientFactory clientFactory, CatTagDb context)
+        public CatsController(ILogger<CatsController> logger, IHttpClientFactory clientFactory, CatTagDb context, IConfiguration configuration)
         {
-            _logger = logger;
+            _configuration = configuration;
 
             _context = context;
 
@@ -38,7 +38,7 @@ namespace MSA2022.Phase2.Backend.Controllers
         [Route("tags")]
         [ProducesResponseType(200)]
         public async Task<IEnumerable<string>> GetTagsAsync()
-        {
+        {       
             var tagsList = new List<string>();
             var savedTags = await _context.CatTags.ToListAsync();
 
@@ -71,7 +71,10 @@ namespace MSA2022.Phase2.Backend.Controllers
             var cataasApiResponse = await response.Content.ReadFromJsonAsync<CataasApiResponse>();
             if (cataasApiResponse == null) return NotFound("API didn't return any results");
 
-            return Ok(new CatPicture() { url = $"https://cataas.com{cataasApiResponse.url}", tags = cataasApiResponse.tags });
+            if (_configuration["ReturnRawData"].ToLower() == "true")
+                return Ok(cataasApiResponse);
+            else
+                return Ok(new CatPicture() { url = $"{_configuration["CataasAddress"]}{cataasApiResponse.url}", tags = cataasApiResponse.tags });
         }
 
         /// <summary>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSA2022.Phase2.Backend", "MSA2022.Phase2.Backend.csproj", "{878AB655-EF92-4E6F-A07C-F7F9E1DE3778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSA2022.Phase2.Backend", "MSA2022.Phase2.Backend.csproj", "{878AB655-EF92-4E6F-A07C-F7F9E1DE3778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSA2022.Phase2.UnitTesting", "..\MSA2022.Phase2.UnitTesting\MSA2022.Phase2.UnitTesting.csproj", "{71AF2A5A-91D9-431F-B4C1-E12EA2FE791A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{878AB655-EF92-4E6F-A07C-F7F9E1DE3778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{878AB655-EF92-4E6F-A07C-F7F9E1DE3778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{878AB655-EF92-4E6F-A07C-F7F9E1DE3778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71AF2A5A-91D9-431F-B4C1-E12EA2FE791A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AF2A5A-91D9-431F-B4C1-E12EA2FE791A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AF2A5A-91D9-431F-B4C1-E12EA2FE791A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71AF2A5A-91D9-431F-B4C1-E12EA2FE791A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
